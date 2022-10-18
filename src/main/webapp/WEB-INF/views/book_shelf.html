@@ -36,12 +36,15 @@
             <tr>
                 <td>
                     <input type="text" placeholder="author" th:field="*{author}">
+                    <p th:if="${#fields.hasErrors('author')}">Author name length must be between 2 and 150 characters</p>
                 </td>
                 <td>
                     <input type="text" placeholder="book_title" th:field="*{title}">
+                    <p th:if="${#fields.hasErrors('title')}">Title must be not blank</p>
                 </td>
                 <td>
                     <input type="text" placeholder="size (pages)" th:field="*{size}">
+                    <p th:if="${#fields.hasErrors('size')}">Pages value must be digit between 1 and 9999</p>
                 </td>
                 <td>
                     <input type="submit" value="save">
@@ -59,10 +62,41 @@
                 <td>
                     <input type="submit" value="remove">
                 </td>
+                <td th:if="${#fields.hasErrors()}">
+                    <p>Book with this id not found</p>
+                </td>
             </tr>
         </table>
     </form>
 
+    <form method="post" th:action="@{/books/removeByRegex}">
+        <table>
+            <tr>
+                <td>
+                    <input type="text" placeholder="regex" th:name="queryRegex">
+                </td>
+                <td>
+                    <input type="submit" value="remove by regex">
+                </td>
+                <td th:if="${IncorrectRegexToRemove}">
+                    <p>Incorrect regex value to remove book!</p>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <form method="post" th:action="@{/books/uploadFile}" enctype="multipart/form-data">
+        <table>
+            <tr>
+                <td>
+                    <input type="file" name="file"/>
+                </td>
+                <td>
+                    <input type="submit" value="Upload">
+                </td>
+            </tr>
+        </table>
+    </form>
 
     <table id="books">
         <tr>
