@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="mod1_lesson6" />
         <module name="simple_mvc" />
+        <module name="skillbox" />
       </profile>
     </annotationProcessing>
   </component>
