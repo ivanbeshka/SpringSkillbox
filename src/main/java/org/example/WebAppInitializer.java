@@ -16,7 +16,7 @@ public class WebAppInitializer implements WebApplicationInitializer {
     Logger logger = Logger.getLogger(WebAppInitializer.class);
 
     @Override
-    public void onStartup(javax.servlet.ServletContext servletContext) throws ServletException {
+    public void onStartup(javax.servlet.ServletContext servletContext) {
 
         logger.info("loading app config");
         AnnotationConfigWebApplicationContext appContext = new AnnotationConfigWebApplicationContext();
