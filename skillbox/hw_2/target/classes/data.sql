@@ -1,0 +1,5 @@
+INSERT INTO books(author,title,size) VALUES ('FDDFf','Mar',10)
+INSERT INTO books(author,title,size) VALUES ('May','Be',100)
+INSERT INTO books(author,title,size) VALUES ('Pop','Corn',130)
+INSERT INTO books(author,title,size) VALUES ('Coffee','Club',110)
+INSERT INTO books(author,title,size) VALUES ('FDd','Book',54)
