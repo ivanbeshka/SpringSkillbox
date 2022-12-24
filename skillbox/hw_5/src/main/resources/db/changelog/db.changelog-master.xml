@@ -1,0 +1,14 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <include file="db/changelog/liquibase-outputChangeLog.xml"/>
+
+    <changeSet id="postgres" author="postgres">
+        <createTable tableName="example_table">
+            <column name="id" type="BIGINT" autoIncrement="true"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
